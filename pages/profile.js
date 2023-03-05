@@ -3,20 +3,20 @@ import Card from "../components/Card";
 import Avatar from "../components/Avatar";
 import Link from "next/link";
 import PostCard from "../components/PostCard";
-import {useRouter} from "next/router";
+import { useRouter } from "next/router";
 import FriendInfo from "../components/FriendInfo";
-import {useEffect, useState} from "react";
-import {useSession, useSupabaseClient} from "@supabase/auth-helpers-react";
+import { useEffect, useState } from "react";
+import { useSession, useSupabaseClient } from "@supabase/auth-helpers-react";
 import Cover from "../components/Cover";
 import ProfileTabs from "../components/ProfileTabs";
 import ProfileContent from "../components/ProfileContent";
-import {UserContextProvider} from "../contexts/UserContext";
+import { UserContextProvider } from "../contexts/UserContext";
 
 export default function ProfilePage() {
-  const [profile,setProfile] = useState(null);
-  const [editMode,setEditMode] = useState(false);
-  const [name,setName] = useState('');
-  const [place,setPlace] = useState('');
+  const [profile, setProfile] = useState(null);
+  const [editMode, setEditMode] = useState(false);
+  const [name, setName] = useState('');
+  const [place, setPlace] = useState('');
   const router = useRouter();
   const tab = router?.query?.tab?.[0] || 'posts';
   const session = useSession();
@@ -54,7 +54,7 @@ export default function ProfilePage() {
       .eq('id', session.user.id)
       .then(result => {
         if (!result.error) {
-          setProfile(prev => ({...prev,name,place}));
+          setProfile(prev => ({ ...prev, name, place }));
         }
         setEditMode(false);
       });
@@ -80,10 +80,10 @@ export default function ProfilePage() {
                   {editMode && (
                     <div>
                       <input type="text"
-                             className="border py-2 px-3 rounded-md"
-                             placeholder={'Your name'}
-                             onChange={ev => setName(ev.target.value)}
-                             value={name}/>
+                        className="border py-2 px-3 rounded-md"
+                        placeholder={'Your name'}
+                        onChange={ev => setName(ev.target.value)}
+                        value={name} />
                     </div>
                   )}
                   {!editMode && (
@@ -92,17 +92,17 @@ export default function ProfilePage() {
                     </h1>
                   )}
                   {!editMode && (
-                    <div className="text-gray-500 leading-4">
+                    <div className="text-white-500 leading-4">
                       {profile?.place || 'Internet'}
                     </div>
                   )}
                   {editMode && (
                     <div>
                       <input type="text"
-                             className="border py-2 px-3 rounded-md mt-1"
-                             placeholder={'Your location'}
-                             onChange={ev => setPlace(ev.target.value)}
-                             value={place}/>
+                        className="border py-2 px-3 rounded-md mt-1"
+                        placeholder={'Your location'}
+                        onChange={ev => setPlace(ev.target.value)}
+                        value={place} />
                     </div>
                   )}
                 </div>

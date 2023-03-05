@@ -8,8 +8,8 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        socialBg:'#F5F7FB',
-        socialBlue: '#218DFA',
+        socialBg: '#1f2937',
+        socialBlue: '#334155',
       },
     },
   },

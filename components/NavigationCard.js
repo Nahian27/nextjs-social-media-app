@@ -1,13 +1,13 @@
 import Card from "./Card";
-import {useRouter} from "next/router";
+import { useRouter } from "next/router";
 import Link from "next/link";
-import {useSupabaseClient} from "@supabase/auth-helpers-react";
+import { useSupabaseClient } from "@supabase/auth-helpers-react";
 
-export default function NavigationCard(){
+export default function NavigationCard() {
   const router = useRouter();
-  const {asPath:pathname} = router;
-  const activeElementClasses = 'text-sm md:text-md flex gap-1 md:gap-3 py-3 my-1 bg-socialBlue text-white md:-mx-7 px-6 md:px-7 rounded-md shadow-md shadow-gray-300 items-center';
-  const nonActiveElementClasses= 'text-sm md:text-md flex gap-1 md:gap-3 py-2 my-2 hover:bg-blue-500 hover:bg-opacity-20 md:-mx-4 px-6 md:px-4 rounded-md transition-all hover:scale-110 hover:shadow-md shadow-gray-300 items-center';
+  const { asPath: pathname } = router;
+  const activeElementClasses = 'text-sm md:text-md flex gap-1 md:gap-3 py-3 my-1 bg-socialBlue text-white md:-mx-7 px-6 md:px-7 rounded-md shadow-md   items-center';
+  const nonActiveElementClasses = 'text-sm md:text-md flex gap-1 md:gap-3 py-2 my-2 hover:bg-slate-400 hover:bg-opacity-20 md:-mx-4 px-6 md:px-4 rounded-md transition-all hover:scale-110 hover:shadow-md   items-center';
 
   const supabase = useSupabaseClient();
   async function logout() {
@@ -17,7 +17,7 @@ export default function NavigationCard(){
   return (
     <Card noPadding={true}>
       <div className="px-4 py-2 flex justify-between md:block shadow-md shadow-gray-500 md:shadow-none">
-        <h2 className="text-gray-400 mb-3 hidden md:block">Navigation</h2>
+        <h2 className="text-white-400 font-black mb-3 hidden md:block">TELESCOPE</h2>
         <Link href="/" className={pathname === '/' ? activeElementClasses : nonActiveElementClasses}>
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
             <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 12l8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25" />
