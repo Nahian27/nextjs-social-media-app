@@ -6,7 +6,7 @@ import Link from "next/link";
 export default function NotificationsPage() {
   return (
     <Layout>
-      <h1 className="text-6xl mb-4 text-white-300">Notifications</h1>
+      <h1 className="text-6xl mb-4 text-red-700">Notifications</h1>
       <Card noPadding={true}>
         <div className="">
           <div className="flex gap-2 items-center border-b border-b-slate-700 p-4">
