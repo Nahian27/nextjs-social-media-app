@@ -16,8 +16,8 @@ export default function NavigationCard() {
 
   return (
     <Card noPadding={true}>
-      <div className="px-4 py-2 flex justify-between md:block shadow-md shadow-gray-500 md:shadow-none">
-        <h2 className="text-white-400 font-black mb-3 hidden md:block">TELESCOPE</h2>
+      <div className="px-4 flex justify-between md:block shadow-md shadow-gray-500 md:shadow-none md:fixed md:h-screen md:border-r-2 md:pr-10 border-r-slate-800 pt-0 mt-0 z-40">
+        <h1 className="text-white-400 text-2xl font-black my-5 hidden md:block">TELESCOPE</h1>
         <Link href="/" className={pathname === '/' ? activeElementClasses : nonActiveElementClasses}>
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
             <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 12l8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25" />
@@ -29,7 +29,7 @@ export default function NavigationCard() {
             <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 15.75l-2.489-2.489m0 0a3.375 3.375 0 10-4.773-4.773 3.375 3.375 0 004.774 4.774zM21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
           </svg>
 
-          <span className="hidden md:block">Search</span>
+          <span className="hidden md:block">Find People</span>
         </Link>
         <Link href="/profile/friends" className={pathname === '/profile/friends' ? activeElementClasses : nonActiveElementClasses}>
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
@@ -49,7 +49,7 @@ export default function NavigationCard() {
           </svg>
           <span className="hidden md:block">Notifications</span>
         </Link>
-        <button onClick={logout} className="w-full -my-2">
+        <button onClick={logout} className="md:w-full">
           <span className={nonActiveElementClasses}>
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
               <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 9V5.25A2.25 2.25 0 0013.5 3h-6a2.25 2.25 0 00-2.25 2.25v13.5A2.25 2.25 0 007.5 21h6a2.25 2.25 0 002.25-2.25V15M12 9l-3 3m0 0l3 3m-3-3h12.75" />

@@ -51,7 +51,7 @@ export default function PostFormCard({ onPost }) {
   }
 
   return (
-    <Card>
+    <Card marginTop={true}>
       <div className="flex gap-2">
         <div>
           <Avatar url={profile?.avatar} />
@@ -59,7 +59,7 @@ export default function PostFormCard({ onPost }) {
         {profile && (
           <textarea value={content}
             onChange={e => setContent(e.target.value)}
-            className="rounded-full bg-slate-700 grow p-3 h-12" placeholder={`Whats on your mind, ${profile?.name}?`} />
+            className="rounded-lg bg-slate-700 grow p-3 h-12" placeholder={`Whats on your mind, ${profile?.name}?`} />
         )}
       </div>
       {isUploading && (

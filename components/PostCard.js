@@ -205,7 +205,7 @@ export default function PostCard({ id, content, created_at, photos, profiles: au
         </div>
       </div>
       <div>
-        <p className="my-3 text-sm">{content}</p>
+        <pre className="my-3 text-md font-sans whitespace-pre-line">{content}</pre>
         {photos?.length > 0 && (
           <div className="flex gap-4">
             {photos.map(photo => (
@@ -236,7 +236,7 @@ export default function PostCard({ id, content, created_at, photos, profiles: au
           4
         </button>
       </div>
-      <div className="flex mt-4 gap-3">
+      <div className="flex mt-4 gap-3 -z-40">
         <div>
           <Avatar url={myProfile?.avatar} />
         </div>
