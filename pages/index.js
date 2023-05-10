@@ -5,6 +5,7 @@ import {useSession, useSupabaseClient} from "@supabase/auth-helpers-react";
 import LoginPage from "./login";
 import {useEffect, useState} from "react";
 import {UserContext} from "../contexts/UserContext";
+import Head from "next/head";
 
 export default function Home() {
   const supabase = useSupabaseClient();
@@ -46,13 +47,19 @@ export default function Home() {
   }
 
   return (
-    <Layout>
-      <UserContext.Provider value={{profile}}>
-        <PostFormCard onPost={fetchPosts} />
-        {posts?.length > 0 && posts.map(post => (
-          <PostCard key={post.id} {...post} />
-        ))}
-      </UserContext.Provider>
-    </Layout>
+      <>
+        <Head>
+          <link rel="icon" type="image/x-icon" href="favicon.ico"></link>
+      </Head>
+        <Layout>
+          <UserContext.Provider value={{profile}}>
+            <PostFormCard onPost={fetchPosts} />
+            {posts?.length > 0 && posts.map(post => (
+                <PostCard key={post.id} {...post} />
+            ))}
+          </UserContext.Provider>
+        </Layout>
+      </>
+
   )
 }
