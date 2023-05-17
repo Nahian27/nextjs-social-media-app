@@ -2,10 +2,13 @@ import Layout from "../components/Layout";
 import Card from "../components/Card";
 import {data} from "../contexts/data";
 import {useState} from "react";
+import {useSession} from "@supabase/auth-helpers-react";
+
 
 export default function Search() {
 
     const [search,setSearch]=useState('')
+    const session = useSession();
     return (
         <Layout hideNavigation={false}>
             <div className="sticky top-0 bg-gray-950 py-3">
@@ -77,6 +80,7 @@ export default function Search() {
                                             )
                                         )
                                     }
+
                                     </tbody>
                                 </table>
                             </div>

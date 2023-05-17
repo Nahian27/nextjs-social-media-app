@@ -11,7 +11,7 @@ export default function Layout({children,hideNavigation}) {
     <div className="md:flex max-w-7xl mx-auto gap-6 mb-24 md:mb-0">
       {!hideNavigation && (
         <div className="fixed md:static w-full bottom-0 md:w-3/12 -mb-5">
-          <NavigationCard />
+          <NavigationCard/>
         </div>
       )}
       <div className={rightColumnClasses}>
